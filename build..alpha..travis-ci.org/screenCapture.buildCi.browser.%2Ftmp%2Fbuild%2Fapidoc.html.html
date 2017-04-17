@@ -1,0 +1,557 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/ForbesLindesay/run-browser">run-browser (v2.0.2)</a>
+</h1>
+<h4>The simplest way to run testling type tests in the browser</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser">module run-browser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.run-browser">
+            function <span class="apidocSignatureSpan"></span>run-browser
+            <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.createHandler">
+            function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+            <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.handles">
+            function <span class="apidocSignatureSpan">run-browser.</span>handles
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.runPhantom">
+            function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.toString">
+            function <span class="apidocSignatureSpan">run-browser.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.createHandler">module run-browser.createHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.createHandler.createHandler">
+            function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+            <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.handles">module run-browser.handles</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.handles.handles">
+            function <span class="apidocSignatureSpan">run-browser.</span>handles
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.runPhantom">module run-browser.runPhantom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.runPhantom.runPhantom">
+            function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.toString">module run-browser.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.toString.toString">
+            function <span class="apidocSignatureSpan">run-browser.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.run-browser" id="apidoc.module.run-browser">module run-browser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.run-browser" id="apidoc.element.run-browser.run-browser">
+        function <span class="apidocSignatureSpan"></span>run-browser
+        <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServer(filename, reports, phantom) {
+  var handler = createHandler(filename, reports, phantom);
+  return http.createServer(handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.createHandler" id="apidoc.element.run-browser.createHandler">
+        function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+        <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createHandler(filename, reports, phantom) {
+
+  if (typeof reports === 'boolean' &amp;&amp; reports) reports = [ 'text' ];
+  else if (typeof reports === 'string') reports = [ reports ];
+
+  if (reports &amp;&amp; !Array.isArray(reports)) return new Error('Invalid reports type' + reports);
+
+  return function (req, res) {
+    if (req.url === '/') {
+      res.setHeader('Content-Type', 'text/html');
+      return res.end(html);
+    }
+    if ('/tests-bundle.js' === req.url) {
+      var sent = false;
+      res.setHeader('Content-Type', 'application/javascript');
+      return glob(filename, function (err, files) {
+        if (err || files.length === 0) {
+          err = err || new Error('No files found matching ' + inspect(filename));
+          return handleError(err, res);
+        }
+        files = files.map(normalizePath);
+        files.unshift(path.join(__dirname, '/lib/override-log.js'));
+
+        if (phantom) {
+          files.unshift(path.join(__dirname, '/lib/phantom-function-bind-shim.js'));
+        }
+
+        var b = browserify(files);
+        if (reports) b.transform(instrumentTransform());
+        return b.bundle({debug: true}, onBrowserifySrc)
+
+        function onBrowserifySrc(err, src) {
+          if (sent) return;
+          sent = true;
+          return err ? handleError(err, res) : res.end(src);
+        }
+
+        function normalizePath(p) {
+          return path.resolve(p);
+        }
+      });
+    }
+    if ('/results' === req.url &amp;&amp; req.method === 'POST') {
+      return req.pipe(JSONStream.parse('*')).once('data', function (results) {
+
+        if (results.coverage) {
+          var collector = new istanbul.Collector();
+          var reporter = new istanbul.Reporter();
+          var sync = false;
+          collector.add(results.coverage);
+          reporter.addAll(reports);
+          reporter.write(collector, sync, done);
+        }
+        else {
+          done();
+        }
+
+        function done(err) {
+          res.statusCode === 200;
+          res.end('OK');
+          var passed = results.tap.fail.length === 0;
+          if (phantom) process.exit(passed ? 0 : 1);
+        }
+      })
+    }
+    res.statusCode = 404;
+    res.end('404: Path not found');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Advanced Usage:
+
+```js
+var runBrowser = require('run-browser');
+
+var handler = runBrowser.<span class="apidocCodeKeywordSpan">createHandler</span>('tests/test.js');
+var server = http.createServer(function (req, res) {
+  if (runBrowser.handles(req)) {
+    return handler(req, res);
+  }
+  // any other server logic here
+});
+server.listen(3000);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.handles" id="apidoc.element.run-browser.handles">
+        function <span class="apidocSignatureSpan">run-browser.</span>handles
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function handles(req) {
+  return req.url === '/' || req.url === '/tests-bundle.js';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Advanced Usage:
+
+```js
+var runBrowser = require('run-browser');
+
+var handler = runBrowser.createHandler('tests/test.js');
+var server = http.createServer(function (req, res) {
+  if (runBrowser.<span class="apidocCodeKeywordSpan">handles</span>(req)) {
+    return handler(req, res);
+  }
+  // any other server logic here
+});
+server.listen(3000);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.runPhantom" id="apidoc.element.run-browser.runPhantom">
+        function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runPhantom(uri) {
+  var proc = spawn(phantomjs.path, [
+    path.join(__dirname, 'phantom-script.js'),
+    uri,
+    '--debug=true'
+  ]);
+  return proc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.toString" id="apidoc.element.run-browser.toString">
+        function <span class="apidocSignatureSpan">run-browser.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      '**/run-browser/**'
+    ],
+    defaultIgnore: true
+  });
+}
+
+function handleError(err, res) {
+  var e = JSON.stringify(err.<span class="apidocCodeKeywordSpan">toString</span>());
+  res.end('document.getElementById("__testling_output").textContent = ' +
+    e + ';console.error(' + e + ');');
+  if (err) console.error(err.stack || err.message || err);
+}
+
+function createHandler(filename, reports, phantom) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.run-browser.createHandler" id="apidoc.module.run-browser.createHandler">module run-browser.createHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.createHandler.createHandler" id="apidoc.element.run-browser.createHandler.createHandler">
+        function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+        <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createHandler(filename, reports, phantom) {
+
+  if (typeof reports === 'boolean' &amp;&amp; reports) reports = [ 'text' ];
+  else if (typeof reports === 'string') reports = [ reports ];
+
+  if (reports &amp;&amp; !Array.isArray(reports)) return new Error('Invalid reports type' + reports);
+
+  return function (req, res) {
+    if (req.url === '/') {
+      res.setHeader('Content-Type', 'text/html');
+      return res.end(html);
+    }
+    if ('/tests-bundle.js' === req.url) {
+      var sent = false;
+      res.setHeader('Content-Type', 'application/javascript');
+      return glob(filename, function (err, files) {
+        if (err || files.length === 0) {
+          err = err || new Error('No files found matching ' + inspect(filename));
+          return handleError(err, res);
+        }
+        files = files.map(normalizePath);
+        files.unshift(path.join(__dirname, '/lib/override-log.js'));
+
+        if (phantom) {
+          files.unshift(path.join(__dirname, '/lib/phantom-function-bind-shim.js'));
+        }
+
+        var b = browserify(files);
+        if (reports) b.transform(instrumentTransform());
+        return b.bundle({debug: true}, onBrowserifySrc)
+
+        function onBrowserifySrc(err, src) {
+          if (sent) return;
+          sent = true;
+          return err ? handleError(err, res) : res.end(src);
+        }
+
+        function normalizePath(p) {
+          return path.resolve(p);
+        }
+      });
+    }
+    if ('/results' === req.url &amp;&amp; req.method === 'POST') {
+      return req.pipe(JSONStream.parse('*')).once('data', function (results) {
+
+        if (results.coverage) {
+          var collector = new istanbul.Collector();
+          var reporter = new istanbul.Reporter();
+          var sync = false;
+          collector.add(results.coverage);
+          reporter.addAll(reports);
+          reporter.write(collector, sync, done);
+        }
+        else {
+          done();
+        }
+
+        function done(err) {
+          res.statusCode === 200;
+          res.end('OK');
+          var passed = results.tap.fail.length === 0;
+          if (phantom) process.exit(passed ? 0 : 1);
+        }
+      })
+    }
+    res.statusCode = 404;
+    res.end('404: Path not found');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Advanced Usage:
+
+```js
+var runBrowser = require('run-browser');
+
+var handler = runBrowser.<span class="apidocCodeKeywordSpan">createHandler</span>('tests/test.js');
+var server = http.createServer(function (req, res) {
+  if (runBrowser.handles(req)) {
+    return handler(req, res);
+  }
+  // any other server logic here
+});
+server.listen(3000);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.run-browser.handles" id="apidoc.module.run-browser.handles">module run-browser.handles</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.handles.handles" id="apidoc.element.run-browser.handles.handles">
+        function <span class="apidocSignatureSpan">run-browser.</span>handles
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function handles(req) {
+  return req.url === '/' || req.url === '/tests-bundle.js';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Advanced Usage:
+
+```js
+var runBrowser = require('run-browser');
+
+var handler = runBrowser.createHandler('tests/test.js');
+var server = http.createServer(function (req, res) {
+  if (runBrowser.<span class="apidocCodeKeywordSpan">handles</span>(req)) {
+    return handler(req, res);
+  }
+  // any other server logic here
+});
+server.listen(3000);
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.run-browser.runPhantom" id="apidoc.module.run-browser.runPhantom">module run-browser.runPhantom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.runPhantom.runPhantom" id="apidoc.element.run-browser.runPhantom.runPhantom">
+        function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runPhantom(uri) {
+  var proc = spawn(phantomjs.path, [
+    path.join(__dirname, 'phantom-script.js'),
+    uri,
+    '--debug=true'
+  ]);
+  return proc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.run-browser.toString" id="apidoc.module.run-browser.toString">module run-browser.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.toString.toString" id="apidoc.element.run-browser.toString.toString">
+        function <span class="apidocSignatureSpan">run-browser.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      '**/run-browser/**'
+    ],
+    defaultIgnore: true
+  });
+}
+
+function handleError(err, res) {
+  var e = JSON.stringify(err.<span class="apidocCodeKeywordSpan">toString</span>());
+  res.end('document.getElementById("__testling_output").textContent = ' +
+    e + ';console.error(' + e + ');');
+  if (err) console.error(err.stack || err.message || err);
+}
+
+function createHandler(filename, reports, phantom) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
