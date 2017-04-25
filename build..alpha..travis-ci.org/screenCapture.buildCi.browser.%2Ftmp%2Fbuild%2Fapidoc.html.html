@@ -83,6 +83,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.index">
+            function <span class="apidocSignatureSpan">run-browser.</span>index
+            <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.run-browser.runPhantom">
             function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
             <span class="apidocSignatureSpan">(uri)</span>
@@ -90,63 +99,42 @@
 
         </li>
 
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.run-browser.toString">
-            function <span class="apidocSignatureSpan">run-browser.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.createHandler">module run-browser.createHandler</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.index">module run-browser.index</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.run-browser.createHandler.createHandler">
-            function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.index.index">
+            function <span class="apidocSignatureSpan">run-browser.</span>index
             <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
             </a>
 
         </li>
 
-    </ol></li>
+        <li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.handles">module run-browser.handles</a><ol>
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.index.createHandler">
+            function <span class="apidocSignatureSpan">run-browser.index.</span>createHandler
+            <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+            </a>
+
+        </li>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.run-browser.handles.handles">
-            function <span class="apidocSignatureSpan">run-browser.</span>handles
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.index.handles">
+            function <span class="apidocSignatureSpan">run-browser.index.</span>handles
             <span class="apidocSignatureSpan">(req)</span>
             </a>
 
         </li>
 
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.runPhantom">module run-browser.runPhantom</a><ol>
-
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.run-browser.runPhantom.runPhantom">
-            function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+            <a class="apidocElementLiA" href="#apidoc.element.run-browser.index.runPhantom">
+            function <span class="apidocSignatureSpan">run-browser.index.</span>runPhantom
             <span class="apidocSignatureSpan">(uri)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.run-browser.toString">module run-browser.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.run-browser.toString.toString">
-            function <span class="apidocSignatureSpan">run-browser.</span>toString
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -303,6 +291,22 @@ server.listen(3000);
 
 
     <h2>
+        <a href="#apidoc.element.run-browser.index" id="apidoc.element.run-browser.index">
+        function <span class="apidocSignatureSpan">run-browser.</span>index
+        <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServer(filename, reports, phantom) {
+  var handler = createHandler(filename, reports, phantom);
+  return http.createServer(handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.run-browser.runPhantom" id="apidoc.element.run-browser.runPhantom">
         function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
         <span class="apidocSignatureSpan">(uri)</span>
@@ -317,36 +321,22 @@ server.listen(3000);
   ]);
   return proc;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.run-browser.toString" id="apidoc.element.run-browser.toString">
-        function <span class="apidocSignatureSpan">run-browser.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      '**/run-browser/**'
-    ],
-    defaultIgnore: true
-  });
-}
 
-function handleError(err, res) {
-  var e = JSON.stringify(err.<span class="apidocCodeKeywordSpan">toString</span>());
-  res.end('document.getElementById("__testling_output").textContent = ' +
-    e + ';console.error(' + e + ');');
-  if (err) console.error(err.stack || err.message || err);
-}
+var server = runbrowser(filename, report, phantom);
+server.listen(port);
 
-function createHandler(filename, reports, phantom) {
+if (!phantom) {
+console.log('Open a browser and navigate to "http://localhost:' + port + '"');
+} else {
+var proc = runbrowser.<span class="apidocCodeKeywordSpan">runPhantom</span>('http://localhost:' + port + '/');
+
+proc.stdout.pipe(process.stdout);
+proc.stderr.pipe(process.stderr);
+
+if (timeout &lt; Infinity) {
+  setTimeout(function() {
+    console.log(fmt('Timeout of %dms exceeded', timeout));
 ...</pre></li>
     </ul>
 
@@ -354,12 +344,28 @@ function createHandler(filename, reports, phantom) {
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.run-browser.createHandler" id="apidoc.module.run-browser.createHandler">module run-browser.createHandler</a></h1>
+<h1><a href="#apidoc.module.run-browser.index" id="apidoc.module.run-browser.index">module run-browser.index</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.run-browser.createHandler.createHandler" id="apidoc.element.run-browser.createHandler.createHandler">
-        function <span class="apidocSignatureSpan">run-browser.</span>createHandler
+        <a href="#apidoc.element.run-browser.index.index" id="apidoc.element.run-browser.index.index">
+        function <span class="apidocSignatureSpan">run-browser.</span>index
+        <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServer(filename, reports, phantom) {
+  var handler = createHandler(filename, reports, phantom);
+  return http.createServer(handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.run-browser.index.createHandler" id="apidoc.element.run-browser.index.createHandler">
+        function <span class="apidocSignatureSpan">run-browser.index.</span>createHandler
         <span class="apidocSignatureSpan">(filename, reports, phantom)</span>
         </a>
     </h2>
@@ -453,15 +459,10 @@ server.listen(3000);
     </ul>
 
 
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.run-browser.handles" id="apidoc.module.run-browser.handles">module run-browser.handles</a></h1>
-
 
     <h2>
-        <a href="#apidoc.element.run-browser.handles.handles" id="apidoc.element.run-browser.handles.handles">
-        function <span class="apidocSignatureSpan">run-browser.</span>handles
+        <a href="#apidoc.element.run-browser.index.handles" id="apidoc.element.run-browser.index.handles">
+        function <span class="apidocSignatureSpan">run-browser.index.</span>handles
         <span class="apidocSignatureSpan">(req)</span>
         </a>
     </h2>
@@ -488,15 +489,10 @@ server.listen(3000);
     </ul>
 
 
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.run-browser.runPhantom" id="apidoc.module.run-browser.runPhantom">module run-browser.runPhantom</a></h1>
-
 
     <h2>
-        <a href="#apidoc.element.run-browser.runPhantom.runPhantom" id="apidoc.element.run-browser.runPhantom.runPhantom">
-        function <span class="apidocSignatureSpan">run-browser.</span>runPhantom
+        <a href="#apidoc.element.run-browser.index.runPhantom" id="apidoc.element.run-browser.index.runPhantom">
+        function <span class="apidocSignatureSpan">run-browser.index.</span>runPhantom
         <span class="apidocSignatureSpan">(uri)</span>
         </a>
     </h2>
@@ -509,39 +505,22 @@ server.listen(3000);
   ]);
   return proc;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.run-browser.toString" id="apidoc.module.run-browser.toString">module run-browser.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.run-browser.toString.toString" id="apidoc.element.run-browser.toString.toString">
-        function <span class="apidocSignatureSpan">run-browser.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      '**/run-browser/**'
-    ],
-    defaultIgnore: true
-  });
-}
 
-function handleError(err, res) {
-  var e = JSON.stringify(err.<span class="apidocCodeKeywordSpan">toString</span>());
-  res.end('document.getElementById("__testling_output").textContent = ' +
-    e + ';console.error(' + e + ');');
-  if (err) console.error(err.stack || err.message || err);
-}
+var server = runbrowser(filename, report, phantom);
+server.listen(port);
 
-function createHandler(filename, reports, phantom) {
+if (!phantom) {
+console.log('Open a browser and navigate to "http://localhost:' + port + '"');
+} else {
+var proc = runbrowser.<span class="apidocCodeKeywordSpan">runPhantom</span>('http://localhost:' + port + '/');
+
+proc.stdout.pipe(process.stdout);
+proc.stderr.pipe(process.stderr);
+
+if (timeout &lt; Infinity) {
+  setTimeout(function() {
+    console.log(fmt('Timeout of %dms exceeded', timeout));
 ...</pre></li>
     </ul>
 
