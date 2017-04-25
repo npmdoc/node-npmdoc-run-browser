@@ -1,4 +1,7 @@
-# api documentation for  [run-browser (v2.0.2)](https://github.com/ForbesLindesay/run-browser)  [![npm package](https://img.shields.io/npm/v/npmdoc-run-browser.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-run-browser) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-run-browser.svg)](https://travis-ci.org/npmdoc/node-npmdoc-run-browser)
+# npmdoc-run-browser
+
+#### basic api documentation for  [run-browser (v2.0.2)](https://github.com/ForbesLindesay/run-browser)  [![npm package](https://img.shields.io/npm/v/npmdoc-run-browser.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-run-browser) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-run-browser.svg)](https://travis-ci.org/npmdoc/node-npmdoc-run-browser)
+
 #### The simplest way to run testling type tests in the browser
 
 [![NPM](https://nodei.co/npm/run-browser.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/run-browser)
